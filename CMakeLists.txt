@@ -27,6 +27,10 @@ set ( SDL_SOURCES
 	src/platforms/SDL.c
 )
 
+set ( WINDOWS_SOURCES
+	src/platforms/Windows.c
+)
+
 
 set ( MAIN_SOURCES
 	src/ProgramMain.c
@@ -37,7 +41,7 @@ find_package(SDL)
 add_library (minivmac_base ${BASE_SOURCES})
 
 if(SDL_FOUND)
-	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DGUI_SDL -I${SDL_INCLUDE_DIR}")
+	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DOS_UNIX -DGUI_SDL -I${SDL_INCLUDE_DIR}")
 	add_library(minivmac_uisdl ${SDL_SOURCES})
 	target_link_libraries(minivmac_uisdl ${SDL_LIBRARY})
 	message ("Building SDL version")
@@ -47,10 +51,15 @@ endif()
 find_package(X11)
 
 if(X11_FOUND)
+	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DOS_UNIX -DGUI_X11")
 	add_library (minivmac_uix11 ${X11_SOURCES})
-
 	target_link_libraries(minivmac_uix11 X11)
 	target_link_libraries(minivmac_uix11 dl)
+endif()
+
+if(WIN32)
+	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DGUI_WINDOWS")
+	add_library (minivmac_uiwindows ${WINDOWS_SOURCES})
 endif()
 
 
@@ -67,3 +76,10 @@ if (SDL_FOUND)
 	target_link_libraries(minivmac_sdl minivmac_uisdl) 
 endif()
 
+if (WIN32)
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,-subsystem,windows")
+	add_executable(minivmac ${MAIN_SOURCES})
+	target_link_libraries(minivmac minivmac_uiwindows)
+	target_link_libraries(minivmac minivmac_base)
+	target_link_libraries(minivmac winmm)
+endif()

@@ -7,25 +7,44 @@
 	you know what you're doing.
 */
 
+#ifdef OS_UNIX
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+#ifdef GUI_X11
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
 #include <X11/keysymdef.h>
 #include <X11/Xatom.h>
+#endif
+#ifdef GUI_SDL
+#include <SDL.h>
+#endif
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <errno.h>
 #include <unistd.h>
 #include <dlfcn.h>
 
-#ifdef GUI_SDL
-#include <SDL.h>
+#define NeedRequestInsertDisk 0
+#define NeedDoMoreCommandsMsg 0
+#define NeedDoAboutMsg 0
+#endif
+
+
+#ifdef GUI_WINDOWS
+#include <windows.h>
+#include <time.h>
+#include <shlobj.h>
+#include <tchar.h>
+
+#define NeedRequestInsertDisk 1
+#define NeedDoMoreCommandsMsg 1
+#define NeedDoAboutMsg 1
 #endif
 
 #define CanGetAppPath 1
@@ -83,9 +102,6 @@
 #define WantEnblCtrlInt 1
 #define WantEnblCtrlRst 1
 #define WantEnblCtrlKtg 1
-#define NeedRequestInsertDisk 0
-#define NeedDoMoreCommandsMsg 0
-#define NeedDoAboutMsg 0
 #define UseControlKeys 1
 #define UseActvCode 0
 #define EnableDemoMsg 0

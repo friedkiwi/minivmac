@@ -28,11 +28,11 @@
 	The main entry point '_tWinMain' is at the end of this file.
 */
 
-#include "CNFGRAPI.h"
-#include "SystemDependencies.h"
-#include "Endianess.h"
+#include "../gui_config.h"
+#include "../SystemDependencies.h"
+#include "../Endianess.h"
 
-#include "platforms/OSGlue.h"
+#include "../platforms/OSGlue.h"
 
 
 /* --- adapting to API/ABI version differences --- */
@@ -85,7 +85,7 @@ LOCALFUNC blnr HaveMySHGetSpecialFolderPath(void)
 
 /* --- end of adapting to API/ABI version differences --- */
 
-#include "STRCONST.h"
+#include "../StringConstants.h"
 
 #if MyUseUni
 #define NeedCell2UnicodeMap 1
@@ -93,7 +93,7 @@ LOCALFUNC blnr HaveMySHGetSpecialFolderPath(void)
 #define NeedCell2WinAsciiMap 1
 #endif
 
-#include "InternationalCharacters.h"
+#include "../InternationalCharacters.h"
 
 
 LOCALPROC NativeStrFromCStr(LPTSTR r, char *s, blnr AddEllipsis)
@@ -240,7 +240,7 @@ LOCALPROC dbglog_close0(void)
 
 #endif
 
-#include "platforms/Common.h"
+#include "../platforms/Common.h"
 
 #ifndef InstallFileIcons
 #define InstallFileIcons 0
@@ -368,7 +368,7 @@ GLOBALOSGLUPROC PbufTransfer(ui3p Buffer,
 
 /* --- control mode and internationalization --- */
 
-#include "ControlM.h"
+#include "../ControlM.h"
 
 /* --- main window info --- */
 
@@ -2253,7 +2253,7 @@ LOCALFUNC blnr UpdateTrueEmulatedTime(void)
 LOCALVAR ui5b TimeSecBase;
 LOCALVAR DWORD TimeMilliBase;
 
-#include "DateToSeconds.h"
+#include "../DateToSeconds.h"
 
 LOCALFUNC blnr CheckDateTime(void)
 {
@@ -6029,7 +6029,7 @@ LOCALPROC UninitHotKeys(void)
 }
 #endif
 
-#include "ProgramMain.h"
+#include "../ProgramMain.h"
 
 /* ************************ */
 
