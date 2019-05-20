@@ -27,24 +27,22 @@ set ( SDL_SOURCES
 	src/platforms/SDL.c
 )
 
-set ( SDL2_SOURCES 
-	src/platforms/SDL2.c
-)
 
 set ( MAIN_SOURCES
 	src/ProgramMain.c
 )
 
 find_package(SDL)
-find_package(SDL2)
 
 add_library (minivmac_base ${BASE_SOURCES})
 
 if(SDL_FOUND)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DGUI_SDL -I${SDL_INCLUDE_DIR}")
+	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DGUI_SDL -I${SDL_INCLUDE_DIR}")
 	add_library(minivmac_uisdl ${SDL_SOURCES})
 	target_link_libraries(minivmac_uisdl ${SDL_LIBRARY})
+	message ("Building SDL version")
 endif()
+
 
 add_library (minivmac_uix11 ${X11_SOURCES})
 
@@ -58,8 +56,9 @@ add_executable(minivmac ${MAIN_SOURCES})
 target_link_libraries(minivmac minivmac_base)
 target_link_libraries(minivmac minivmac_uix11)
 
-if (${SDL_FOUND})
+if (SDL_FOUND)
 	add_executable(minivmac_sdl ${MAIN_SOURCES})
 	target_link_libraries(minivmac_sdl minivmac_base)
 	target_link_libraries(minivmac_sdl minivmac_uisdl) 
 endif()
+
