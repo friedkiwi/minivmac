@@ -33,9 +33,9 @@
 #include "IwmEmulator.h"
 #include "SCCEMDEV.h"
 #if EmRTC
-#include "RTCEMDEV.h"
+#include "RtcEmulator.h"
 #endif
-#include "ROMEMDEV.h"
+#include "RomEmulator.h"
 #include "ScsiEmulator.h"
 #include "SonyEmulator.h"
 #include "SCRNEMDV.h"

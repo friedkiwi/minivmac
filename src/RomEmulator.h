@@ -1,5 +1,5 @@
 /*
-	RTCEMDEV.h
+	RomEmulator.h
 
 	Copyright (C) 2003 Philip Cummins, Paul C. Pratt
 
@@ -14,15 +14,10 @@
 	license for more details.
 */
 
-#ifdef RTCEMDEV_H
+#ifdef ROMEMDEV_H
 #error "header already included"
 #else
-#define RTCEMDEV_H
+#define ROMEMDEV_H
 #endif
 
-EXPORTFUNC blnr RTC_Init(void);
-EXPORTPROC RTC_Interrupt(void);
-
-EXPORTPROC RTCunEnabled_ChangeNtfy(void);
-EXPORTPROC RTCclock_ChangeNtfy(void);
-EXPORTPROC RTCdataLine_ChangeNtfy(void);
+EXPORTFUNC blnr ROM_Init(void);

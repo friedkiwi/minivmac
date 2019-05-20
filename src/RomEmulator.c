@@ -33,7 +33,7 @@
 #include "GlobalGlue.h"
 #endif
 
-#include "ROMEMDEV.h"
+#include "RomEmulator.h"
 
 #define UseSonyPatch \
 	((CurEmMd <= kEmMd_Classic) || (CurEmMd == kEmMd_II) \
