@@ -25,7 +25,7 @@
 */
 
 #ifndef AllFiles
-#include "SYSDEPNS.h"
+#include "SystemDependencies.h"
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
 #include "EMCONFIG.h"

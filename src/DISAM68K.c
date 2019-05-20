@@ -19,7 +19,7 @@
 */
 
 #ifndef AllFiles
-#include "SYSDEPNS.h"
+#include "SystemDependencies.h"
 
 #include "ENDIANAC.h"
 #include "MYOSGLUE.h"

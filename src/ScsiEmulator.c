@@ -25,7 +25,7 @@
 /* NCR5380 chip emulation by Yoav Shadmi, 1998 */
 
 #ifndef AllFiles
-#include "SYSDEPNS.h"
+#include "SystemDependencies.h"
 
 #include "ENDIANAC.h"
 #include "MYOSGLUE.h"

@@ -39,7 +39,7 @@
 */
 
 #ifndef AllFiles
-#include "SYSDEPNS.h"
+#include "SystemDependencies.h"
 
 #include "MYOSGLUE.h"
 #include "EMCONFIG.h"

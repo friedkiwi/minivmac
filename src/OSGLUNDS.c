@@ -19,7 +19,7 @@
 */
 
 #include "CNFGRAPI.h"
-#include "SYSDEPNS.h"
+#include "SystemDependencies.h"
 #include "ENDIANAC.h"
 
 #include "MYOSGLUE.h"
