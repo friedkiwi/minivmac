@@ -20,13 +20,13 @@
 
 #ifndef AllFiles
 #include "SystemDependencies.h"
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #include "ViaEmulator.h"
 #endif
 
-#include "PMUEMDEV.h"
+#include "PowerManagementEmulator.h"
 
 /*
 	ReportAbnormalID unused 0x0E0E - 0x0EFF

@@ -20,14 +20,14 @@
 
 #ifndef AllFiles
 #include "SystemDependencies.h"
-#include "ENDIANAC.h"
-#include "MYOSGLUE.h"
+#include "Endianess.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #include "ViaEmulator.h"
 #endif
 
-#include "ASCEMDEV.h"
+#include "AppleSoundEmulator.h"
 
 /*
 	ReportAbnormalID unused 0x0F0E, 0x0F1E - 0x0FFF

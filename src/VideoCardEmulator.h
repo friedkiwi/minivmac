@@ -1,5 +1,5 @@
 /*
-	PMUEMDEV.h
+	VideoCardEmulator.h
 
 	Copyright (C) 2008 Paul C. Pratt
 
@@ -14,11 +14,14 @@
 	license for more details.
 */
 
-#ifdef PMUEMDEV_H
+#ifdef VIDEMDEV_H
 #error "header already included"
 #else
-#define PMUEMDEV_H
+#define VIDEMDEV_H
 #endif
 
-EXPORTPROC PmuToReady_ChangeNtfy(void);
-EXPORTPROC PMU_DoTask(void);
+EXPORTFUNC blnr Vid_Init(void);
+EXPORTFUNC ui4r Vid_Reset(void);
+EXPORTPROC Vid_Update(void);
+
+EXPORTPROC ExtnVideo_Access(CPTR p);

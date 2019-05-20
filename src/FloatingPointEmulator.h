@@ -1,5 +1,5 @@
 /*
-	FPCPEMDV.h
+	FloatingPointEmulator.h
 
 	Copyright (C) 2007 Ross Martin, Paul C. Pratt
 

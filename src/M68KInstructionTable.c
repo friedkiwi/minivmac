@@ -22,7 +22,7 @@
 #include "SystemDependencies.h"
 #endif
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 

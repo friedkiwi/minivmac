@@ -20,9 +20,9 @@
 
 #include "CNFGRAPI.h"
 #include "SystemDependencies.h"
-#include "ENDIANAC.h"
+#include "Endianess.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 
 #include "STRCONST.h"
 
@@ -59,7 +59,7 @@ LOCALVAR int Display_bg2_Main = 0;
 
 #define NeedCell2PlainAsciiMap 1
 
-#include "INTLCHAR.h"
+#include "InternationalCharacters.h"
 
 /* --- sending debugging info to file --- */
 
@@ -121,8 +121,8 @@ LOCALPROC WriteExtraErr(char *s)
 
 #define WantColorTransValid 0
 
-#include "COMOSGLU.h"
-#include "CONTROLM.h"
+#include "platforms/Common.h"
+#include "ControlM.h"
 
 LOCALPROC NativeStrFromCStr(char *r, char *s)
 {
@@ -730,7 +730,7 @@ LOCALPROC DS_HandleKeyboard(void)
 
 LOCALVAR ui5b TrueEmulatedTime = 0;
 
-#include "DATE2SEC.h"
+#include "DateToSeconds.h"
 
 #define TicksPerSecond 1000000
 /* #define TicksPerSecond  1000 */

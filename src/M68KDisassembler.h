@@ -1,7 +1,7 @@
 /*
-	VIDEMDEV.h
+	M68KDisassembler.h
 
-	Copyright (C) 2008 Paul C. Pratt
+	Copyright (C) 2010 Paul C. Pratt
 
 	You can redistribute this file and/or modify it under the terms
 	of version 2 of the GNU General Public License as published by
@@ -14,14 +14,16 @@
 	license for more details.
 */
 
-#ifdef VIDEMDEV_H
+/*
+	DISAssemble Motorola 68K instructions.
+*/
+
+#ifdef DIS1M68K_H
 #error "header already included"
 #else
-#define VIDEMDEV_H
+#define DIS1M68K_H
 #endif
 
-EXPORTFUNC blnr Vid_Init(void);
-EXPORTFUNC ui4r Vid_Reset(void);
-EXPORTPROC Vid_Update(void);
+EXPORTPROC DisasmOneOrSave(ui5r pc);
 
-EXPORTPROC ExtnVideo_Access(CPTR p);
+EXPORTPROC m68k_WantDisasmContext(void);

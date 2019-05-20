@@ -23,9 +23,9 @@
 
 #include "CNFGRAPI.h"
 #include "SystemDependencies.h"
-#include "ENDIANAC.h"
+#include "Endianess.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 
 #include "STRCONST.h"
 
@@ -40,7 +40,7 @@ GLOBALOSGLUPROC MyMoveBytes(anyp srcPtr, anyp destPtr, si5b byteCount)
 
 #define NeedCell2PlainAsciiMap 1
 
-#include "INTLCHAR.h"
+#include "InternationalCharacters.h"
 
 #ifndef CanGetAppPath
 #define CanGetAppPath 1
@@ -168,11 +168,11 @@ LOCALPROC dbglog_close0(void)
 
 #define WantColorTransValid 0
 
-#include "COMOSGLU.h"
+#include "platforms/Common.h"
 
-#include "PBUFSTDC.h"
+#include "ParameterBuffers.h"
 
-#include "CONTROLM.h"
+#include "ControlM.h"
 
 /* --- text translation --- */
 
@@ -591,7 +591,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 3
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth4Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -600,7 +600,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 4
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth5Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -609,7 +609,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #if EnableMagnify && ! UseSDLscaling
 
@@ -621,7 +621,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth4ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -631,7 +631,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth5ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -641,7 +641,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #endif /* EnableMagnify && ! UseSDLscaling */
 
@@ -655,7 +655,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 3
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth4Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -664,7 +664,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 4
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth5Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -673,7 +673,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #if EnableMagnify && ! UseSDLscaling
 
@@ -685,7 +685,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth4ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -695,7 +695,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth5ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -705,7 +705,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #endif /* EnableMagnify && ! UseSDLscaling */
 

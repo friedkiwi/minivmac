@@ -1,5 +1,5 @@
 /*
-	CONTROLM.h
+	ControlM.h
 
 	Copyright (C) 2007 Paul C. Pratt
 
@@ -319,7 +319,7 @@ LOCALPROC DrawSpclMode0(char *Title, SpclModeBody Body)
 }
 
 #if EnableAltKeysMode
-#include "ALTKEYSM.h"
+#include "AlternateKeysMode.h"
 #else
 #define Keyboard_UpdateKeyMap1 Keyboard_UpdateKeyMap
 #define DisconnectKeyCodes1 DisconnectKeyCodes

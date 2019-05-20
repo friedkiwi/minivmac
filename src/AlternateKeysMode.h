@@ -1,5 +1,5 @@
 /*
-	ALTKEYSM.h
+	AlternateKeysMode.h
 
 	Copyright (C) 2007 Paul C. Pratt
 

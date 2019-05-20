@@ -1,5 +1,5 @@
 /*
-	ADBEMDEV.h
+	PowerManagementEmulator.h
 
 	Copyright (C) 2008 Paul C. Pratt
 
@@ -14,14 +14,11 @@
 	license for more details.
 */
 
-#ifdef ADBEMDEV_H
+#ifdef PMUEMDEV_H
 #error "header already included"
 #else
-#define ADBEMDEV_H
+#define PMUEMDEV_H
 #endif
 
-
-EXPORTPROC ADBstate_ChangeNtfy(void);
-EXPORTPROC ADB_DoNewState(void);
-EXPORTPROC ADB_DataLineChngNtfy(void);
-EXPORTPROC ADB_Update(void);
+EXPORTPROC PmuToReady_ChangeNtfy(void);
+EXPORTPROC PMU_DoTask(void);

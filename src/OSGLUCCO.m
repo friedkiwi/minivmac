@@ -26,9 +26,9 @@
 
 #include "CNFGRAPI.h"
 #include "SystemDependencies.h"
-#include "ENDIANAC.h"
+#include "Endianess.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 
 #include "STRCONST.h"
 
@@ -288,7 +288,7 @@ GLOBALOSGLUPROC MyMoveBytes(anyp srcPtr, anyp destPtr, si5b byteCount)
 
 #define NeedCell2UnicodeMap 1
 
-#include "INTLCHAR.h"
+#include "InternationalCharacters.h"
 
 /* --- sending debugging info to file --- */
 
@@ -344,13 +344,13 @@ LOCALPROC dbglog_close0(void)
 
 #define WantColorTransValid 1
 
-#include "COMOSGLU.h"
+#include "platforms/Common.h"
 
 #define WantKeyboard_RemapMac 1
 
-#include "PBUFSTDC.h"
+#include "ParameterBuffers.h"
 
-#include "CONTROLM.h"
+#include "ControlM.h"
 
 /* --- text translation --- */
 
@@ -1249,7 +1249,7 @@ GLOBALOSGLUFUNC tMacErr HTCEimport(tPbuf *r)
 
 #if EmLocalTalk
 
-#include "BPFILTER.h"
+#include "BPFilter.h"
 
 #endif
 
@@ -1701,7 +1701,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 3
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 
 #if (0 != vMacScreenDepth) && (vMacScreenDepth < 4)
@@ -1713,7 +1713,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #endif
 

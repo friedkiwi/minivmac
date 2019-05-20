@@ -35,12 +35,12 @@
 	looking at included examples, one by Paul Sheer.
 */
 
-#include "SystemDependencies.h"
-#include "ENDIANAC.h"
-#include "gui_config.h"
-#include "MYOSGLUE.h"
+#include "../SystemDependencies.h"
+#include "../Endianess.h"
+#include "../gui_config.h"
+#include "OSGlue.h"
 
-#include "StringConstants.h"
+#include "../StringConstants.h"
 
 /* --- some simple utilities --- */
 
@@ -53,7 +53,7 @@ GLOBALOSGLUPROC MyMoveBytes(anyp srcPtr, anyp destPtr, si5b byteCount)
 
 #define NeedCell2PlainAsciiMap 1
 
-#include "INTLCHAR.h"
+#include "../InternationalCharacters.h"
 
 
 LOCALVAR char *d_arg = NULL;
@@ -307,11 +307,11 @@ LOCALFUNC blnr NetSupportedContains(Atom x)
 
 #define WantColorTransValid 1
 
-#include "COMOSGLU.h"
+#include "Common.h"
 
-#include "PBUFSTDC.h"
+#include "../ParameterBuffers.h"
 
-#include "CONTROLM.h"
+#include "../ControlM.h"
 
 /* --- text translation --- */
 
@@ -1388,7 +1388,7 @@ LOCALPROC SetUpBW2ColorTabl(void)
 #define ScrnMapr_Map ScalingTabl
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "../ScreenMapper.h"
 
 #endif
 
@@ -1402,7 +1402,7 @@ LOCALPROC SetUpBW2ColorTabl(void)
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map ScalingTabl
 
-#include "SCRNMAPR.h"
+#include "../ScreenMapper.h"
 
 #endif
 
@@ -2287,7 +2287,7 @@ LOCALPROC DisconnectKeyCodes3(void)
 
 LOCALVAR ui5b TrueEmulatedTime = 0;
 
-#include "DATE2SEC.h"
+#include "../DateToSeconds.h"
 
 #define TicksPerSecond 1000000
 
@@ -2511,7 +2511,7 @@ LOCALPROC MySound_SecondNotify0(void)
 
 #define SOUND_SAMPLERATE 22255 /* = round(7833600 * 2 / 704) */
 
-#include "sound_config.h"
+#include "../sound_config.h"
 
 #endif
 
@@ -4489,7 +4489,7 @@ label_retry:
 
 /* --- platform independent code can be thought of as going here --- */
 
-#include "ProgramMain.h"
+#include "../ProgramMain.h"
 
 LOCALPROC ZapOSGLUVars(void)
 {

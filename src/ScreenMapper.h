@@ -1,5 +1,5 @@
 /*
-	SCRNMAPR.h
+	ScreenMapper.h
 
 	Copyright (C) 2012 Paul C. Pratt
 

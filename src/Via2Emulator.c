@@ -25,12 +25,12 @@
 #ifndef AllFiles
 #include "SystemDependencies.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #endif
 
-#include "VIA2EMDV.h"
+#include "Via2Emulator.h"
 
 /*
 	ReportAbnormalID unused 0x0510 - 0x05FF

@@ -19,7 +19,7 @@ set ( BASE_SOURCES
 )
 
 set ( X11_SOURCES
-	src/OSGlueX11.c
+	src/platforms/X11.c
 )
 
 set ( MAIN_SOURCES

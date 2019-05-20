@@ -29,15 +29,15 @@
 
 #ifndef AllFiles
 #include "SystemDependencies.h"
-#include "MYOSGLUE.h"
-#include "ENDIANAC.h"
+#include "platforms/OSGlue.h"
+#include "Endianess.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #include "M68KCpuEmulator.h"
 #include "SonyEmulator.h"
 #endif
 
-#include "VIDEMDEV.h"
+#include "VideoCardEmulator.h"
 
 /*
 	ReportAbnormalID unused 0x0A08 - 0x0AFF

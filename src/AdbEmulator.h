@@ -1,5 +1,5 @@
 /*
-	ASCEMDEV.h
+	AdbEmulator.h
 
 	Copyright (C) 2008 Paul C. Pratt
 
@@ -14,11 +14,14 @@
 	license for more details.
 */
 
-#ifdef ASCEMDEV_H
+#ifdef ADBEMDEV_H
 #error "header already included"
 #else
-#define ASCEMDEV_H
+#define ADBEMDEV_H
 #endif
 
-EXPORTFUNC ui5b ASC_Access(ui5b Data, blnr WriteMem, CPTR addr);
-EXPORTPROC ASC_SubTick(int SubTick);
+
+EXPORTPROC ADBstate_ChangeNtfy(void);
+EXPORTPROC ADB_DoNewState(void);
+EXPORTPROC ADB_DataLineChngNtfy(void);
+EXPORTPROC ADB_Update(void);

@@ -1,5 +1,5 @@
 /*
-	ENDIANAC.h
+	Endianess.h
 
 	Copyright (C) 2006 Bernd Schmidt, Paul C. Pratt
 

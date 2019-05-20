@@ -23,13 +23,13 @@
 
 #include "CNFGRAPI.h"
 #include "SystemDependencies.h"
-#include "ENDIANAC.h"
+#include "Endianess.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 
 #include "STRCONST.h"
 
-#include "COMOSGLU.h"
+#include "platforms/Common.h"
 
 /* --- some simple utilities --- */
 
@@ -42,9 +42,9 @@ GLOBALOSGLUPROC MyMoveBytes(anyp srcPtr, anyp destPtr, si5b byteCount)
 
 #define NeedCell2PlainAsciiMap 1
 
-#include "INTLCHAR.h"
+#include "InternationalCharacters.h"
 
-#include "CONTROLM.h"
+#include "ControlM.h"
 
 /* --- sending debugging info to file --- */
 
@@ -778,7 +778,7 @@ LOCALPROC DoKeyCode(guint keycode, blnr down)
 
 LOCALVAR ui5b TrueEmulatedTime = 0;
 
-#include "DATE2SEC.h"
+#include "DateToSeconds.h"
 
 #define TicksPerSecond 1000000
 

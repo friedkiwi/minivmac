@@ -1,5 +1,5 @@
 /*
-	BPFILTER.h
+	BPFilter.h
 
 	Copyright (C) 2012 Michael Fort, Paul C. Pratt
 

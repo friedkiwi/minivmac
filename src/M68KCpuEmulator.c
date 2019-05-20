@@ -27,21 +27,21 @@
 	at the cost of being 2 to 3 times slower.
 
 	FPU Emulation added 9/12/2009 by Ross Martin
-		(this code now located in "FPCPEMDV.h")
+		(this code now located in "FloatingPointEmulator.h")
 */
 
 #ifndef AllFiles
 #include "SystemDependencies.h"
 
-#include "MYOSGLUE.h"
-#include "ENDIANAC.h"
+#include "platforms/OSGlue.h"
+#include "Endianess.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 
 #include "M68KITAB.h"
 
 #if WantDisasm
-#include "DISAM68K.h"
+#include "M68KDisassembler.h"
 #endif
 #endif
 
@@ -8204,8 +8204,8 @@ LOCALIPROC DoCodeMMU(void)
 
 #if EmFPU
 
-#include "FPMATHEM.h"
-#include "FPCPEMDV.h"
+#include "FloatingPointMathEmulator.h"
+#include "FloatingPointEmulator.h"
 
 #endif
 

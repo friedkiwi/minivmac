@@ -20,12 +20,12 @@
 
 #ifndef AllFiles
 #include "SystemDependencies.h"
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #endif
 
-#include "ADBEMDEV.h"
+#include "AdbEmulator.h"
 
 #ifdef _VIA_Debug
 #include <stdio.h>
@@ -38,7 +38,7 @@
 IMPORTPROC ADB_ShiftOutData(ui3b v);
 IMPORTFUNC ui3b ADB_ShiftInData(void);
 
-#include "ADBSHARE.h"
+#include "AdbShared.h"
 
 LOCALVAR blnr ADB_ListenDatBuf;
 LOCALVAR ui3b ADB_IndexDatBuf;

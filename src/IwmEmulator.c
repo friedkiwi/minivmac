@@ -32,12 +32,12 @@
 #ifndef AllFiles
 #include "SystemDependencies.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #endif
 
-#include "IWMEMDEV.h"
+#include "IwmEmulator.h"
 
 /*
 	ReportAbnormalID unused 0x0603 - 0x06FF

@@ -30,9 +30,9 @@
 
 #include "CNFGRAPI.h"
 #include "SystemDependencies.h"
-#include "ENDIANAC.h"
+#include "Endianess.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 
 
 /* --- adapting to API/ABI version differences --- */
@@ -93,7 +93,7 @@ LOCALFUNC blnr HaveMySHGetSpecialFolderPath(void)
 #define NeedCell2WinAsciiMap 1
 #endif
 
-#include "INTLCHAR.h"
+#include "InternationalCharacters.h"
 
 
 LOCALPROC NativeStrFromCStr(LPTSTR r, char *s, blnr AddEllipsis)
@@ -240,7 +240,7 @@ LOCALPROC dbglog_close0(void)
 
 #endif
 
-#include "COMOSGLU.h"
+#include "platforms/Common.h"
 
 #ifndef InstallFileIcons
 #define InstallFileIcons 0
@@ -368,7 +368,7 @@ GLOBALOSGLUPROC PbufTransfer(ui3p Buffer,
 
 /* --- control mode and internationalization --- */
 
-#include "CONTROLM.h"
+#include "ControlM.h"
 
 /* --- main window info --- */
 
@@ -2253,7 +2253,7 @@ LOCALFUNC blnr UpdateTrueEmulatedTime(void)
 LOCALVAR ui5b TimeSecBase;
 LOCALVAR DWORD TimeMilliBase;
 
-#include "DATE2SEC.h"
+#include "DateToSeconds.h"
 
 LOCALFUNC blnr CheckDateTime(void)
 {

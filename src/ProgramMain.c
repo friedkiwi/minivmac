@@ -21,16 +21,16 @@
 #ifndef AllFiles
 #include "SystemDependencies.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #include "M68KITAB.h"
 #include "M68KCpuEmulator.h"
 #include "ViaEmulator.h"
 #if EmVIA2
-#include "VIA2EMDV.h"
+#include "Via2Emulator.h"
 #endif
-#include "IWMEMDEV.h"
+#include "IwmEmulator.h"
 #include "SCCEMDEV.h"
 #if EmRTC
 #include "RTCEMDEV.h"
@@ -40,17 +40,17 @@
 #include "SonyEmulator.h"
 #include "SCRNEMDV.h"
 #if EmVidCard
-#include "VIDEMDEV.h"
+#include "VideoCardEmulator.h"
 #endif
 #if EmClassicKbrd
 #include "KeyboardEmulator.h"
 #elif EmPMU
-#include "PMUEMDEV.h"
+#include "PowerManagementEmulator.h"
 #else
-#include "ADBEMDEV.h"
+#include "AdbEmulator.h"
 #endif
 #if EmASC
-#include "ASCEMDEV.h"
+#include "AppleSoundEmulator.h"
 #else
 #if MySoundEnabled && (CurEmMd != kEmMd_PB100)
 #include "SoundEmulator.h"

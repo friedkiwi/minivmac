@@ -27,8 +27,8 @@
 #ifndef AllFiles
 #include "SystemDependencies.h"
 
-#include "ENDIANAC.h"
-#include "MYOSGLUE.h"
+#include "Endianess.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #include "M68KCpuEmulator.h"

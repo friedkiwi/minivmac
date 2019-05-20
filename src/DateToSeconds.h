@@ -1,5 +1,5 @@
 /*
-	DATE2SEC.h
+	DateToSeconds.h
 	Copyright (C) 2003 Bradford L. Barrett, Paul C. Pratt
 
 	You can redistribute this file and/or modify it under the terms

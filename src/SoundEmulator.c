@@ -25,7 +25,7 @@
 #ifndef AllFiles
 #include "SystemDependencies.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 #include "EmulatorConfig.h"
 #include "GlobalGlue.h"
 #include "M68KCpuEmulator.h"

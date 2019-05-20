@@ -29,9 +29,9 @@
 
 #include "CNFGRAPI.h"
 #include "SystemDependencies.h"
-#include "ENDIANAC.h"
+#include "Endianess.h"
 
-#include "MYOSGLUE.h"
+#include "platforms/OSGlue.h"
 
 /* --- adapting to API/ABI version differences --- */
 
@@ -655,7 +655,7 @@ LOCALPROC PStrFromChar(ps3p r, char x)
 
 #define NeedCell2UnicodeMap 1
 
-#include "INTLCHAR.h"
+#include "InternationalCharacters.h"
 
 LOCALPROC UniCharStrFromSubstCStr(int *L, UniChar *x, char *s)
 {
@@ -895,7 +895,7 @@ LOCALPROC dbglog_close0(void)
 #define WantColorTransValid 1
 #endif
 
-#include "COMOSGLU.h"
+#include "platforms/Common.h"
 
 /* --- time, date --- */
 
@@ -970,7 +970,7 @@ LOCALFUNC blnr CheckDateTime(void)
 
 /* --- parameter buffers --- */
 
-#include "PBUFSTDC.h"
+#include "ParameterBuffers.h"
 
 /* --- drives --- */
 
@@ -1169,7 +1169,7 @@ GLOBALOSGLUFUNC tMacErr HTCEimport(tPbuf *r)
 
 #if EmLocalTalk
 
-#include "BPFILTER.h"
+#include "BPFilter.h"
 
 #endif
 
@@ -1178,7 +1178,7 @@ GLOBALOSGLUFUNC tMacErr HTCEimport(tPbuf *r)
 
 #define WantKeyboard_RemapMac 1
 
-#include "CONTROLM.h"
+#include "ControlM.h"
 
 
 /* --- video out --- */
@@ -1271,7 +1271,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 3
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 
 #if (0 != vMacScreenDepth) && (vMacScreenDepth < 4)
@@ -1283,7 +1283,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map CLUT_final
 
-#include "SCRNMAPR.h"
+#include "ScreenMapper.h"
 
 #endif
 
@@ -1947,7 +1947,7 @@ LOCALFUNC blnr InitMousePosition(void)
 
 /* --- time, date, location, part 2 --- */
 
-#include "DATE2SEC.h"
+#include "DateToSeconds.h"
 
 LOCALFUNC blnr InitLocationDat(void)
 {

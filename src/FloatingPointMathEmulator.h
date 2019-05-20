@@ -1,5 +1,5 @@
 /*
-	FPMATHEM.h
+	FloatingPointMathEmulator.h
 
 	Copyright (C) 2007 John R. Hauser, Stanislav Shwartsman,
 		Ross Martin, Paul C. Pratt

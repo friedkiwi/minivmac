@@ -1,5 +1,5 @@
 /*
-	INTLCHAR.h
+	InternationalCharacters.h
 
 	Copyright (C) 2010 Paul C. Pratt
 

@@ -1,5 +1,5 @@
 /*
-	PBUFSTDC.h
+	ParameterBuffers.h
 
 	Copyright (C) 2018 Paul C. Pratt
 
