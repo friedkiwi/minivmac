@@ -3,3 +3,5 @@ CMakeFiles/*
 CMakeCache.txt
 Makefile
 *.cmake
+bld/
+cfg/
