@@ -29,6 +29,8 @@
 
 #include "../StringConstants.h"
 
+#include <SDL/SDL.h>
+
 #undef   IncludeHostTextClipExchange
 
 /* --- some simple utilities --- */

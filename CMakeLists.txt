@@ -2,6 +2,8 @@ cmake_minimum_required (VERSION 3.0)
 
 project (MinivMac)
 
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+
 set ( BASE_SOURCES
 	src/M68KCpuEmulator.c
 	src/M68KInstructionTable.c
@@ -41,7 +43,7 @@ find_package(SDL)
 add_library (minivmac_base ${BASE_SOURCES})
 
 if(SDL_FOUND)
-	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DOS_UNIX -DGUI_SDL -I${SDL_INCLUDE_DIR}")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_UNIX -DGUI_SDL -I${SDL_INCLUDE_DIRS}")
 	add_library(minivmac_uisdl ${SDL_SOURCES})
 	target_link_libraries(minivmac_uisdl ${SDL_LIBRARY})
 	message ("Building SDL version")
@@ -51,15 +53,21 @@ endif()
 find_package(X11)
 
 if(X11_FOUND)
-	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DOS_UNIX -DGUI_X11")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_UNIX -DGUI_X11")
 	add_library (minivmac_uix11 ${X11_SOURCES})
 	target_link_libraries(minivmac_uix11 X11)
 	target_link_libraries(minivmac_uix11 dl)
+	target_link_libraries(minivmac_uix11 xcb)
+	target_link_libraries(minivmac_uix11 pthread)
+	target_link_libraries(minivmac_uix11 Xdmcp)
+	target_link_libraries(minivmac_uix11 Xau)
+	message ("Building X11 version")
 endif()
 
 if(WIN32)
-	set(CMAKE_C_FLAGS "${CMAKE_CFLAGS} -DGUI_WINDOWS")
+	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DGUI_WINDOWS")
 	add_library (minivmac_uiwindows ${WINDOWS_SOURCES})
+	message ("Building Windows version")
 endif()
 
 

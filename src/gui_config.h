@@ -21,9 +21,6 @@
 #include <X11/keysymdef.h>
 #include <X11/Xatom.h>
 #endif
-#ifdef GUI_SDL
-#include <SDL.h>
-#endif
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <errno.h>
