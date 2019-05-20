@@ -1318,7 +1318,7 @@ LOCALPROC SetUpBW2ColorTabl(void)
 #define ScrnMapr_Map ScalingTabl
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "../SCreenMapper.h"
 
 #endif
 
@@ -1332,7 +1332,7 @@ LOCALPROC SetUpBW2ColorTabl(void)
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map ScalingTabl
 
-#include "SCRNMAPR.h"
+#include "../ScreenMapper.h"
 
 #endif
 
@@ -1347,7 +1347,7 @@ LOCALPROC SetUpBW2ColorTabl(void)
 #define ScrnMapr_Map ScalingTabl
 #define ScrnMapr_Scale MyWindowScale
 
-#include "SCRNMAPR.h"
+#include "../ScreenMapper.h"
 
 #endif
 
@@ -1360,7 +1360,7 @@ LOCALPROC SetUpBW2ColorTabl(void)
 #define ScrnTrns_SrcDepth vMacScreenDepth
 #define ScrnTrns_DstDepth 5
 
-#include "SCRNTRNS.h"
+#include "../ScreenTranslator.h"
 
 #endif
 
@@ -1373,7 +1373,7 @@ LOCALPROC SetUpBW2ColorTabl(void)
 #define ScrnTrns_DstDepth 5
 #define ScrnTrns_Scale MyWindowScale
 
-#include "SCRNTRNS.h"
+#include "../ScreenTranslator.h"
 
 #endif
 
