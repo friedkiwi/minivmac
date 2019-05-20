@@ -23,8 +23,8 @@
 #include "ENDIANAC.h"
 #include "MYOSGLUE.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
-#include "VIAEMDEV.h"
+#include "GlobalGlue.h"
+#include "ViaEmulator.h"
 #endif
 
 #include "ASCEMDEV.h"

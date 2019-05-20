@@ -27,7 +27,7 @@
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
+#include "GlobalGlue.h"
 #endif
 
 /* define _RTC_Debug */

@@ -1316,7 +1316,7 @@ label_retry:
 	OnTrueTime = TrueEmulatedTime;
 }
 
-#include "PROGMAIN.h"
+#include "ProgramMain.h"
 
 static gboolean
 MainEventLoop0(gpointer data)

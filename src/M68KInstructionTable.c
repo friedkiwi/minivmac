@@ -24,7 +24,7 @@
 
 #include "MYOSGLUE.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
+#include "GlobalGlue.h"
 
 #include "M68KITAB.h"
 

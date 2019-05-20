@@ -28,12 +28,12 @@
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
+#include "GlobalGlue.h"
 #include "SCCEMDEV.h"
-#include "MINEM68K.h"
+#include "M68KCpuEmulator.h"
 #endif
 
-#include "MOUSEMDV.h"
+#include "MouseEmulator.h"
 
 GLOBALPROC Mouse_Update(void)
 {

@@ -32,9 +32,9 @@
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
-#include "MINEM68K.h"
-#include "SONYEMDV.h"
+#include "GlobalGlue.h"
+#include "M68KCpuEmulator.h"
+#include "SonyEmulator.h"
 #endif
 
 #include "VIDEMDEV.h"

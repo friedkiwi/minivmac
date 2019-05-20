@@ -33,11 +33,11 @@
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
-#include "MINEM68K.h"
+#include "GlobalGlue.h"
+#include "M68KCpuEmulator.h"
 #endif
 
-#include "SONYEMDV.h"
+#include "SonyEmulator.h"
 
 /*
 	ReportAbnormalID unused 0x090B - 0x09FF

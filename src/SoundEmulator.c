@@ -27,11 +27,11 @@
 
 #include "MYOSGLUE.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
-#include "MINEM68K.h"
+#include "GlobalGlue.h"
+#include "M68KCpuEmulator.h"
 #endif
 
-#include "SNDEMDEV.h"
+#include "SoundEmulator.h"
 
 
 #if MySoundEnabled

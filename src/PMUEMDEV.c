@@ -22,8 +22,8 @@
 #include "SystemDependencies.h"
 #include "MYOSGLUE.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
-#include "VIAEMDEV.h"
+#include "GlobalGlue.h"
+#include "ViaEmulator.h"
 #endif
 
 #include "PMUEMDEV.h"

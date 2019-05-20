@@ -36,7 +36,7 @@
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
+#include "GlobalGlue.h"
 
 #include "M68KITAB.h"
 
@@ -45,7 +45,7 @@
 #endif
 #endif
 
-#include "MINEM68K.h"
+#include "M68KCpuEmulator.h"
 
 /*
 	ReportAbnormalID unused 0x0123 - 0x01FF

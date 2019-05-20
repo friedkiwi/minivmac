@@ -1,5 +1,5 @@
 /*
-	MINEM68K.h
+	M68KCpuEmulator.h
 
 	Copyright (C) 2004 Bernd Schmidt, Paul C. Pratt
 

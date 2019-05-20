@@ -6029,7 +6029,7 @@ LOCALPROC UninitHotKeys(void)
 }
 #endif
 
-#include "PROGMAIN.h"
+#include "ProgramMain.h"
 
 /* ************************ */
 

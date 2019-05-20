@@ -1,7 +1,7 @@
 /*
-	MOUSEMDV.h
+	ScsiEmulator.h
 
-	Copyright (C) 2003 Philip Cummins, Paul C. Pratt
+	Copyright (C) 2004 Philip Cummins, Paul C. Pratt
 
 	You can redistribute this file and/or modify it under the terms
 	of version 2 of the GNU General Public License as published by
@@ -14,11 +14,12 @@
 	license for more details.
 */
 
-#ifdef MOUSEMDV_H
+#ifdef SCSIEMDV_H
 #error "header already included"
 #else
-#define MOUSEMDV_H
+#define SCSIEMDV_H
 #endif
 
-EXPORTPROC Mouse_Update(void);
-EXPORTPROC Mouse_EndTickNotify(void);
+EXPORTPROC SCSI_Reset(void);
+
+EXPORTFUNC ui5b SCSI_Access(ui5b Data, blnr WriteMem, CPTR addr);

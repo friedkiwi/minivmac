@@ -23,10 +23,10 @@
 
 #include "MYOSGLUE.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
+#include "GlobalGlue.h"
 #include "M68KITAB.h"
-#include "MINEM68K.h"
-#include "VIAEMDEV.h"
+#include "M68KCpuEmulator.h"
+#include "ViaEmulator.h"
 #if EmVIA2
 #include "VIA2EMDV.h"
 #endif
@@ -36,14 +36,14 @@
 #include "RTCEMDEV.h"
 #endif
 #include "ROMEMDEV.h"
-#include "SCSIEMDV.h"
-#include "SONYEMDV.h"
+#include "ScsiEmulator.h"
+#include "SonyEmulator.h"
 #include "SCRNEMDV.h"
 #if EmVidCard
 #include "VIDEMDEV.h"
 #endif
 #if EmClassicKbrd
-#include "KBRDEMDV.h"
+#include "KeyboardEmulator.h"
 #elif EmPMU
 #include "PMUEMDEV.h"
 #else
@@ -53,14 +53,14 @@
 #include "ASCEMDEV.h"
 #else
 #if MySoundEnabled && (CurEmMd != kEmMd_PB100)
-#include "SNDEMDEV.h"
+#include "SoundEmulator.h"
 #endif
 #endif
-#include "MOUSEMDV.h"
+#include "MouseEmulator.h"
 #endif
 
 
-#include "PROGMAIN.h"
+#include "ProgramMain.h"
 
 /*
 	ReportAbnormalID unused 0x1002 - 0x10FF

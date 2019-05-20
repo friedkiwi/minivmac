@@ -32,7 +32,7 @@
 #include "EmulatorConfig.h"
 #endif
 
-#include "GLOBGLUE.h"
+#include "GlobalGlue.h"
 
 /*
 	ReportAbnormalID unused 0x111D - 0x11FF

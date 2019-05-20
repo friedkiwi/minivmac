@@ -1,8 +1,7 @@
 /*
-	PROGMAIN.h
+	KeyboardEmulator.h
 
-	Copyright (C) 2009 Philip Cummins, Richard F. Bannister,
-		Paul C. Pratt
+	Copyright (C) 2003 Philip Cummins, Paul C. Pratt
 
 	You can redistribute this file and/or modify it under the terms
 	of version 2 of the GNU General Public License as published by
@@ -15,11 +14,14 @@
 	license for more details.
 */
 
-#ifdef PROGMAIN_H
+#ifdef KBRDEMDV_H
 #error "header already included"
 #else
-#define PROGMAIN_H
+#define KBRDEMDV_H
 #endif
 
-EXPORTPROC EmulationReserveAlloc(void);
-EXPORTPROC ProgramMain(void);
+
+EXPORTPROC Kybd_DataLineChngNtfy(void);
+EXPORTPROC DoKybd_ReceiveEndCommand(void);
+EXPORTPROC DoKybd_ReceiveCommand(void);
+EXPORTPROC KeyBoard_Update(void);

@@ -1,5 +1,5 @@
 /*
-	VIAEMDEV.h
+	ViaEmulator.h
 
 	Copyright (C) 2004 Philip Cummins, Paul C. Pratt
 

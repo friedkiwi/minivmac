@@ -1250,7 +1250,7 @@ LOCALPROC DS_ClearVRAM(void)
 
 /* --- platform independent code can be thought of as going here --- */
 
-#include "PROGMAIN.h"
+#include "ProgramMain.h"
 
 LOCALPROC ReserveAllocAll(void)
 {

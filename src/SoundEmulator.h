@@ -1,7 +1,7 @@
 /*
-	SONYEMDV.h
+	SoundEmulator.h
 
-	Copyright (C) 2004 Paul C. Pratt
+	Copyright (C) 2003 Philip Cummins, Paul C. Pratt
 
 	You can redistribute this file and/or modify it under the terms
 	of version 2 of the GNU General Public License as published by
@@ -14,18 +14,12 @@
 	license for more details.
 */
 
-#ifdef SONYEMDV_H
+#ifdef SNDEMDEV_H
 #error "header already included"
 #else
-#define SONYEMDV_H
+#define SNDEMDEV_H
 #endif
 
-EXPORTPROC ExtnDisk_Access(CPTR p);
-EXPORTPROC ExtnSony_Access(CPTR p);
-
-EXPORTPROC Sony_SetQuitOnEject(void);
-
-EXPORTPROC Sony_EjectAllDisks(void);
-EXPORTPROC Sony_Reset(void);
-
-EXPORTPROC Sony_Update(void);
+#if MySoundEnabled
+EXPORTPROC MacSound_SubTick(int SubTick);
+#endif

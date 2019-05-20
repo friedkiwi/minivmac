@@ -5510,7 +5510,7 @@ label_retry:
 #endif
 }
 
-#include "PROGMAIN.h"
+#include "ProgramMain.h"
 
 LOCALPROC AppendMenuCStr(MenuHandle menu, char *s)
 {

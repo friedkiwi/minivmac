@@ -27,10 +27,10 @@
 
 #include "MYOSGLUE.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
+#include "GlobalGlue.h"
 #endif
 
-#include "VIAEMDEV.h"
+#include "ViaEmulator.h"
 
 /*
 	ReportAbnormalID unused 0x0410 - 0x04FF

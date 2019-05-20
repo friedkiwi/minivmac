@@ -30,11 +30,11 @@
 #include "ENDIANAC.h"
 #include "MYOSGLUE.h"
 #include "EmulatorConfig.h"
-#include "GLOBGLUE.h"
-#include "MINEM68K.h"
+#include "GlobalGlue.h"
+#include "M68KCpuEmulator.h"
 #endif
 
-#include "SCSIEMDV.h"
+#include "ScsiEmulator.h"
 
 #define scsiRd   0x00
 #define scsiWr   0x01

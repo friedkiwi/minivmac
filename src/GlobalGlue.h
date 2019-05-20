@@ -1,5 +1,5 @@
 /*
-	GLOBGLUE.h
+	GlobalGlue.h
 
 	Copyright (C) 2003 Bernd Schmidt, Philip Cummins, Paul C. Pratt
 
