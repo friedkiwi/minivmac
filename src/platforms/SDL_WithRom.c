@@ -355,6 +355,7 @@ LOCALVAR char *rom_path = NULL;
 LOCALFUNC blnr LoadMacRom(void)
 {
 	memcpy(ROM, ROMDATA, ROMLEN);
+	ROM_loaded = trueblnr;
 	return trueblnr;
 }
 

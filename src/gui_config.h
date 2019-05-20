@@ -102,7 +102,7 @@
 #define UseColorImage 1
 #define WantInitRunInBackground 0
 #define WantInitNotAutoSlow 0
-#define WantInitSpeedValue 3
+#define WantInitSpeedValue -1
 #define WantEnblCtrlInt 1
 #define WantEnblCtrlRst 1
 #define WantEnblCtrlKtg 1
@@ -114,9 +114,9 @@
 
 #define NeedIntlChars 0
 #define kStrAppName "Mini vMac"
-#define kAppVariationStr "minivmac-36.04-lx64"
-#define kStrCopyrightYear "2018"
-#define kMaintainerName "unknown"
-#define kStrHomePage "(unknown)"
+#define kAppVariationStr "minivmac-0.1"
+#define kStrCopyrightYear "2019"
+#define kMaintainerName "friedkiwi"
+#define kStrHomePage "https://github.com/friedkiwi/minivmac"
 
-#define kBldOpts "-br 36 -t lx64"
+#define kBldOpts "N/A"

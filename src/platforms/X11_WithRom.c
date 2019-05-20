@@ -1009,6 +1009,7 @@ LOCALFUNC tMacErr LoadMacRomFromAppPar(void)
 LOCALFUNC blnr LoadMacRom(void)
 {
 	memcpy(ROM, ROMDATA, ROMLEN);
+	ROM_loaded = trueblnr;
 	return trueblnr;
 }
 

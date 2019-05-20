@@ -5122,6 +5122,7 @@ LOCALPROC MakeNewDisk(ui5b L, HGLOBAL NewDiskNameDat)
 LOCALFUNC blnr LoadMacRom(void)
 {
 	memcpy (ROM, ROMDATA, ROMLEN);
+	ROM_loaded = trueblnr;
 	return trueblnr;
 }
 
