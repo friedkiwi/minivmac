@@ -5,3 +5,7 @@ Makefile
 *.cmake
 bld/
 cfg/
+*.a
+*.lib
+*.dll
+minivmac
