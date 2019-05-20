@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.0)
 
 project (MinivMac)
 
-set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DMACII")
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -DMACII")
 
 set ( BASE_SOURCES
 	src/M68KCpuEmulator.c
