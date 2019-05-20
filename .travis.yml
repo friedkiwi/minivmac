@@ -18,10 +18,10 @@ script:
         - cd ..
         - mkdir build_mingw32
         - cd build_mingw32
-        - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw32.txt
+        - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw32.txt ..
         - make
         - cd ..
         - mkdir -p build_mingw64
         - cd build_mingw64
-        - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw64.txt
+        - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw64.txt ..
         - make
