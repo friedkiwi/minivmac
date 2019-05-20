@@ -1,10 +1,17 @@
-dist: xenial
-addons:
-        apt:
-                packages:
-                        - build-essential
-                        - libsdl2-dev
-                        - libx11-dev
-compiler:
-        - clang
-        - gcc
+language: c
+
+matrix:
+        include:
+                - os: linux
+                  dist: trusty
+                  sudo: true
+                  compiler: gcc
+                  addons: 
+                        apt:
+                                packages: build-essential libx11-dev libsdl2-dev cmake
+
+script:
+        - mkdir -p build
+        - cd build
+        - cmake ..
+        - make
