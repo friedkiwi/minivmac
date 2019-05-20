@@ -1,0 +1,10 @@
+dist: xenial
+addons:
+        apt:
+                packages:
+                        - build-essential
+                        - libsdl2-dev
+                        - libx11-dev
+compiler:
+        - clang
+        - gcc
