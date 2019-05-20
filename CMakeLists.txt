@@ -44,17 +44,22 @@ if(SDL_FOUND)
 endif()
 
 
-add_library (minivmac_uix11 ${X11_SOURCES})
+find_package(X11)
 
-target_link_libraries(minivmac_uix11 X11)
-target_link_libraries(minivmac_uix11 dl)
+if(X11_FOUND)
+	add_library (minivmac_uix11 ${X11_SOURCES})
+
+	target_link_libraries(minivmac_uix11 X11)
+	target_link_libraries(minivmac_uix11 dl)
+endif()
 
 
 
-
-add_executable(minivmac ${MAIN_SOURCES})
-target_link_libraries(minivmac minivmac_base)
-target_link_libraries(minivmac minivmac_uix11)
+if (X11_FOUND)
+	add_executable(minivmac_x11 ${MAIN_SOURCES})
+	target_link_libraries(minivmac_x11 minivmac_base)
+	target_link_libraries(minivmac_x11 minivmac_uix11)
+endif()
 
 if (SDL_FOUND)
 	add_executable(minivmac_sdl ${MAIN_SOURCES})
