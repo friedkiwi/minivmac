@@ -49,13 +49,20 @@
 #define TheAppPathLink "/proc/self/exe"
 #define HaveSysctlPath 0
 
-
+#ifdef MACII
+#define RomFileName "MacII.ROM"
+#define kCheckSumRom_Size 0x00040000
+#define kRomCheckSum1 0x9779D2C4
+#define kRomCheckSum2 0x97221136
+#define RomStartCheckSum 1
+#else
 #define RomFileName "vMac.ROM"
 #define kCheckSumRom_Size 0x00020000
 #define kRomCheckSum1 0x4D1EEEE1
 #define kRomCheckSum2 0x4D1EEAE1
 #define kRomCheckSum3 0x4D1F8172
 #define RomStartCheckSum 1
+#endif
 #define EnableDragDrop 1
 #define SaveDialogEnable 1
 #define EnableAltKeysMode 0

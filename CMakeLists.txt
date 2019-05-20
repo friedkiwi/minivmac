@@ -2,12 +2,14 @@ cmake_minimum_required (VERSION 3.0)
 
 project (MinivMac)
 
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DMACII")
 
 set ( BASE_SOURCES
 	src/M68KCpuEmulator.c
 	src/M68KInstructionTable.c
 	src/GlobalGlue.c
 	src/ViaEmulator.c
+	src/Via2Emulator.c
 	src/IwmEmulator.c
 	src/SccEmulator.c
 	src/RtcEmulator.c
@@ -17,7 +19,10 @@ set ( BASE_SOURCES
 	src/ScreenEmulator.c
 	src/MouseEmulator.c
 	src/KeyboardEmulator.c
+	src/AdbEmulator.c
 	src/SoundEmulator.c
+	src/AppleSoundEmulator.c
+	src/VideoCardEmulator.c
 )
 
 set ( X11_SOURCES

@@ -58,6 +58,12 @@ typedef ui5b ui5r;
 typedef si5b si5r;
 #define si5beqr 1
 
+typedef signed long long si6r;
+typedef signed long long si6b;
+typedef unsigned long long ui6r;
+typedef unsigned long long ui6b;
+#define LIT64(a) a##ULL
+
 /* capabilities provided by platform specific code */
 
 #define MySoundEnabled 1
@@ -74,11 +80,11 @@ typedef si5b si5r;
 #define IncludeSonyNew 1
 #define IncludeSonyNameNew 1
 
-#define vMacScreenHeight 342
-#define vMacScreenWidth 512
-#define vMacScreenDepth 0
+#define vMacScreenHeight 600
+#define vMacScreenWidth 800
+#define vMacScreenDepth 3
 
-#define kROM_Size 0x00020000
+#define kROM_Size 0x00040000
 
 #define IncludePbufs 1
 #define NumPbufs 4
@@ -90,4 +96,3 @@ typedef si5b si5r;
 #define EmLocalTalk 0
 #define AutoLocation 1
 #define AutoTimeZone 1
-

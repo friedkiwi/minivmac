@@ -155,23 +155,14 @@ EXPORTPROC SetInterruptButton(blnr v);
 
 enum {
 	kICT_SubTick,
-#if EmClassicKbrd
 	kICT_Kybd_ReceiveCommand,
 	kICT_Kybd_ReceiveEndCommand,
-#endif
-#if EmADB
 	kICT_ADB_NewState,
-#endif
-#if EmPMU
 	kICT_PMU_Task,
-#endif
 	kICT_VIA1_Timer1Check,
 	kICT_VIA1_Timer2Check,
-#if EmVIA2
 	kICT_VIA2_Timer1Check,
 	kICT_VIA2_Timer2Check,
-#endif
-
 	kNumICTs
 };
 
