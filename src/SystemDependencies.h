@@ -24,7 +24,7 @@
 #define SYSDEPNS_H
 #endif
 
-#include "CNFGGLOB.h"
+#include "config.h"
 
 
 typedef ui3b *ui3p;

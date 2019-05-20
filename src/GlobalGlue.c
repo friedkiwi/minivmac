@@ -29,7 +29,7 @@
 
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
-#include "EMCONFIG.h"
+#include "EmulatorConfig.h"
 #endif
 
 #include "GLOBGLUE.h"

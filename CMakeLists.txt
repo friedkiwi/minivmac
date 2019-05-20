@@ -28,6 +28,8 @@ set ( MAIN_SOURCES
 
 add_library (minivmac_base ${BASE_SOURCES})
 add_library (minivmac_x11 ${X11_SOURCES})
+target_link_libraries(minivmac_x11 X11)
+target_link_libraries(minivmac_x11 dl)
 
 
 add_executable(minivmac ${MAIN_SOURCES})

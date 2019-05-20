@@ -35,13 +35,12 @@
 	looking at included examples, one by Paul Sheer.
 */
 
-#include "CNFGRAPI.h"
 #include "SystemDependencies.h"
 #include "ENDIANAC.h"
-
+#include "gui_config.h"
 #include "MYOSGLUE.h"
 
-#include "STRCONST.h"
+#include "StringConstants.h"
 
 /* --- some simple utilities --- */
 
@@ -2512,7 +2511,7 @@ LOCALPROC MySound_SecondNotify0(void)
 
 #define SOUND_SAMPLERATE 22255 /* = round(7833600 * 2 / 704) */
 
-#include "SOUNDGLU.h"
+#include "sound_config.h"
 
 #endif
 

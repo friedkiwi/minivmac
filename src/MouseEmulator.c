@@ -27,7 +27,7 @@
 #include "SystemDependencies.h"
 #include "MYOSGLUE.h"
 #include "ENDIANAC.h"
-#include "EMCONFIG.h"
+#include "EmulatorConfig.h"
 #include "GLOBGLUE.h"
 #include "SCCEMDEV.h"
 #include "MINEM68K.h"

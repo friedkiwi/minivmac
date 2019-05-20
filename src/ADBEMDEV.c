@@ -21,7 +21,7 @@
 #ifndef AllFiles
 #include "SystemDependencies.h"
 #include "MYOSGLUE.h"
-#include "EMCONFIG.h"
+#include "EmulatorConfig.h"
 #include "GLOBGLUE.h"
 #endif
 

@@ -22,7 +22,7 @@
 #include "SystemDependencies.h"
 #include "ENDIANAC.h"
 #include "MYOSGLUE.h"
-#include "EMCONFIG.h"
+#include "EmulatorConfig.h"
 #include "GLOBGLUE.h"
 #include "VIAEMDEV.h"
 #endif
