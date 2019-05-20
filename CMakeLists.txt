@@ -26,11 +26,12 @@ set ( BASE_SOURCES
 )
 
 set ( X11_SOURCES
-	src/platforms/X11.c
+	src/platforms/X11_WithRom.c
 )
 
+
 set ( SDL_SOURCES
-	src/platforms/SDL.c
+	src/platforms/SDL_WithRom.c
 )
 
 set ( WINDOWS_SOURCES
@@ -76,6 +77,7 @@ if (X11_FOUND)
 	add_executable(minivmac_x11 ${MAIN_SOURCES})
 	target_link_libraries(minivmac_x11 minivmac_base)
 	target_link_libraries(minivmac_x11 minivmac_uix11)
+
 endif()
 
 if (SDL_FOUND)
