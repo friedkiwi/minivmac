@@ -2280,7 +2280,9 @@ LOCALFUNC blnr InitOSGLU(void)
 #endif
 	if (Screen_Init())
 	if (CreateMainWindow())
-	return trueblnr;
+		return trueblnr;
+	else
+		return falseblnr;
 }
 
 LOCALPROC UnInitOSGLU(void)

@@ -4751,7 +4751,9 @@ LOCALFUNC blnr InitOSGLU(void)
 	if (Screen_Init())
 	if (CreateMainWindow())
 	if (KC2MKCInit())
-	return trueblnr;
+		return trueblnr;
+	else
+		return falseblnr;
 }
 
 LOCALPROC UnInitOSGLU(void)

@@ -35,7 +35,7 @@ set ( SDL_SOURCES
 )
 
 set ( WINDOWS_SOURCES
-	src/platforms/Windows.c
+	src/platforms/Windows_WithRom.c
 )
 
 
