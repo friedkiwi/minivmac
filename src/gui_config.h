@@ -24,6 +24,10 @@
 #include <unistd.h>
 #include <dlfcn.h>
 
+#ifdef GUI_SDL
+#include <SDL.h>
+#endif
+
 #define CanGetAppPath 1
 #define HaveAppPathLink 1
 #define TheAppPathLink "/proc/self/exe"

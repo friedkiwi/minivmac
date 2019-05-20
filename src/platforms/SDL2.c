@@ -21,13 +21,15 @@
 	SDL Library should go here.
 */
 
-#include "CNFGRAPI.h"
-#include "SystemDependencies.h"
-#include "Endianess.h"
+#include "../gui_config.h"
+#include "../SystemDependencies.h"
+#include "../Endianess.h"
 
-#include "platforms/OSGlue.h"
+#include "../platforms/OSGlue.h"
 
-#include "STRCONST.h"
+#include "../StringConstants.h"
+
+#undef   IncludeHostTextClipExchange
 
 /* --- some simple utilities --- */
 

@@ -21,13 +21,15 @@
 	SDL Library should go here.
 */
 
-#include "CNFGRAPI.h"
-#include "SystemDependencies.h"
-#include "Endianess.h"
+#include "../gui_config.h"
+#include "../SystemDependencies.h"
+#include "../Endianess.h"
 
-#include "platforms/OSGlue.h"
+#include "OSGlue.h"
 
-#include "STRCONST.h"
+#include "../StringConstants.h"
+
+#undef   IncludeHostTextClipExchange
 
 /* --- some simple utilities --- */
 
@@ -40,7 +42,7 @@ GLOBALOSGLUPROC MyMoveBytes(anyp srcPtr, anyp destPtr, si5b byteCount)
 
 #define NeedCell2PlainAsciiMap 1
 
-#include "InternationalCharacters.h"
+#include "../InternationalCharacters.h"
 
 /* --- sending debugging info to file --- */
 
@@ -89,11 +91,11 @@ LOCALPROC dbglog_close0(void)
 
 #define WantColorTransValid 0
 
-#include "platforms/Common.h"
+#include "Common.h"
 
-#include "ParameterBuffers.h"
+#include "../ParameterBuffers.h"
 
-#include "ControlM.h"
+#include "../ControlM.h"
 
 /* --- text translation --- */
 
@@ -192,6 +194,13 @@ GLOBALOSGLUFUNC tMacErr vSonyEject(tDrive Drive_No)
 	return vSonyEject0(Drive_No, falseblnr);
 }
 
+#if IncludeSonyNew
+GLOBALOSGLUFUNC tMacErr vSonyEjectDelete(tDrive Drive_No)
+{
+        return vSonyEject0(Drive_No, trueblnr);
+}
+#endif
+
 LOCALPROC UnInitDrives(void)
 {
 	tDrive i;
@@ -202,6 +211,14 @@ LOCALPROC UnInitDrives(void)
 		}
 	}
 }
+
+#if IncludeSonyGetName
+GLOBALOSGLUFUNC tMacErr vSonyGetName(tDrive Drive_No, tPbuf *r)
+{
+	return mnvm_miscErr;
+}
+#endif
+
 
 LOCALFUNC blnr Sony_Insert0(FILE *refnum, blnr locked,
 	char *drivepath)
@@ -388,7 +405,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 3
 #define ScrnMapr_Map CLUT_final
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth4Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -397,7 +414,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 4
 #define ScrnMapr_Map CLUT_final
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth5Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -406,7 +423,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map CLUT_final
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth3ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -416,7 +433,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth4ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -426,7 +443,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateBWDepth5ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -436,7 +453,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 
 #if (0 != vMacScreenDepth) && (vMacScreenDepth < 4)
@@ -448,7 +465,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 3
 #define ScrnMapr_Map CLUT_final
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth4Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -457,7 +474,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 4
 #define ScrnMapr_Map CLUT_final
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth5Copy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -466,7 +483,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_DstDepth 5
 #define ScrnMapr_Map CLUT_final
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth3ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -476,7 +493,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth4ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -486,7 +503,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #define ScrnMapr_DoMap UpdateColorDepth5ScaledCopy
 #define ScrnMapr_Src GetCurDrawBuff()
@@ -496,7 +513,7 @@ LOCALVAR ui3p CLUT_final;
 #define ScrnMapr_Map CLUT_final
 #define ScrnMapr_Scale MyWindowScale
 
-#include "ScreenMapper.h"
+#include "../ScreenMapper.h"
 
 #endif
 
@@ -2190,7 +2207,7 @@ label_retry:
 
 /* --- platform independent code can be thought of as going here --- */
 
-#include "ProgramMain.h"
+#include "../ProgramMain.h"
 
 LOCALPROC ZapOSGLUVars(void)
 {
