@@ -8,7 +8,7 @@ matrix:
                   compiler: gcc
                   addons: 
                         apt:
-                                packages: build-essential libx11-dev libsdl2-dev cmake
+                                packages: build-essential libx11-dev libsdl2-dev cmake pkg-config mingw-w64
 
 script:
         - mkdir -p build
