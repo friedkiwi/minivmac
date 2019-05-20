@@ -2,3 +2,4 @@ CMakeFiles/*
 *.o
 CMakeCache.txt
 Makefile
+*.cmake
