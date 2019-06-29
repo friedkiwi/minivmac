@@ -1,5 +1,7 @@
 language: c
-
+addons:
+        sonarcloud:
+                organization: "friedkiwi-github"
 matrix:
         include:
                 - os: linux
@@ -8,7 +10,7 @@ matrix:
                   compiler: gcc
                   addons: 
                         apt:
-                                packages: build-essential libx11-dev libsdl2-dev cmake pkg-config mingw-w64
+                                packages: build-essential libsdl2-dev cmake pkg-config mingw-w64
 
 script:
         - mkdir -p build_linux
