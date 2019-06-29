@@ -14,5 +14,5 @@ vMac.ROM
 minivmac_sdl
 minivmac_x11
 .idea
-./*-build-debug/
-./*-build-release/
+/cmake-build-debug/
+/cmake-build-release/
