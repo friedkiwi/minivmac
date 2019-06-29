@@ -29,11 +29,17 @@
 #include "../RomFile.h"
 #include "../StringConstants.h"
 
-#include <SDL/SDL.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <SDL.h>
 
 #undef   IncludeHostTextClipExchange
 
 /* --- some simple utilities --- */
+
+SDL_Window* gWindow = NULL;
+SDL_Renderer* gRenderer = NULL;
 
 GLOBALOSGLUPROC MyMoveBytes(anyp srcPtr, anyp destPtr, si5b byteCount)
 {
@@ -794,9 +800,14 @@ LOCALPROC HaveChangedScreenBuff(ui4r top, ui4r left,
 	if (SDL_MUSTLOCK(my_surface)) {
 		SDL_UnlockSurface(my_surface);
 	}
+    SDL_RenderClear(gRenderer);
+    SDL_Texture *texture = SDL_CreateTextureFromSurface(gRenderer, my_surface);
+	SDL_RenderCopy(gRenderer, texture, NULL, NULL);
+	SDL_RenderPresent(gRenderer);
+	SDL_DestroyTexture(texture);
 
-	SDL_UpdateRect(my_surface, left2, top2,
-		right2 - left2, bottom2 - top2);
+//	SDL_UpdateRect(my_surface, left2, top2,
+//		right2 - left2, bottom2 - top2);
 }
 
 LOCALPROC MyDrawChangesAndClear(void)
@@ -844,7 +855,7 @@ LOCALFUNC blnr MyMoveMouse(si4b h, si4b v)
 	}
 #endif
 
-	SDL_WarpMouse(h, v);
+	SDL_WarpMouseInWindow(gWindow, h, v);
 
 	return trueblnr;
 }
@@ -921,7 +932,7 @@ LOCALPROC CheckMouseState(void)
 
 /* --- keyboard input --- */
 
-LOCALFUNC ui3r SDLKey2MacKeyCode(SDLKey i)
+LOCALFUNC ui3r SDLKey2MacKeyCode(SDL_Keycode i)
 {
 	ui3r v = MKC_None;
 
@@ -999,16 +1010,16 @@ LOCALFUNC ui3r SDLKey2MacKeyCode(SDLKey i)
 		case SDLK_y: v = MKC_Y; break;
 		case SDLK_z: v = MKC_Z; break;
 
-		case SDLK_KP0: v = MKC_KP0; break;
-		case SDLK_KP1: v = MKC_KP1; break;
-		case SDLK_KP2: v = MKC_KP2; break;
-		case SDLK_KP3: v = MKC_KP3; break;
-		case SDLK_KP4: v = MKC_KP4; break;
-		case SDLK_KP5: v = MKC_KP5; break;
-		case SDLK_KP6: v = MKC_KP6; break;
-		case SDLK_KP7: v = MKC_KP7; break;
-		case SDLK_KP8: v = MKC_KP8; break;
-		case SDLK_KP9: v = MKC_KP9; break;
+		case SDLK_KP_0: v = MKC_KP0; break;
+		case SDLK_KP_1: v = MKC_KP1; break;
+		case SDLK_KP_2: v = MKC_KP2; break;
+		case SDLK_KP_3: v = MKC_KP3; break;
+		case SDLK_KP_4: v = MKC_KP4; break;
+		case SDLK_KP_5: v = MKC_KP5; break;
+		case SDLK_KP_6: v = MKC_KP6; break;
+		case SDLK_KP_7: v = MKC_KP7; break;
+		case SDLK_KP_8: v = MKC_KP8; break;
+		case SDLK_KP_9: v = MKC_KP9; break;
 
 		case SDLK_KP_PERIOD: v = MKC_Decimal; break;
 		case SDLK_KP_DIVIDE: v = MKC_KPDevide; break;
@@ -1045,31 +1056,28 @@ LOCALFUNC ui3r SDLKey2MacKeyCode(SDLKey i)
 		case SDLK_F14: /* ? */ break;
 		case SDLK_F15: /* ? */ break;
 
-		case SDLK_NUMLOCK: v = MKC_formac_ForwardDel; break;
+		case SDLK_NUMLOCKCLEAR: v = MKC_formac_ForwardDel; break;
 		case SDLK_CAPSLOCK: v = MKC_formac_CapsLock; break;
-		case SDLK_SCROLLOCK: v = MKC_ScrollLock; break;
+		case SDLK_SCROLLLOCK: v = MKC_ScrollLock; break;
 		case SDLK_RSHIFT: v = MKC_formac_RShift; break;
 		case SDLK_LSHIFT: v = MKC_formac_Shift; break;
 		case SDLK_RCTRL: v = MKC_formac_RControl; break;
 		case SDLK_LCTRL: v = MKC_formac_Control; break;
-		case SDLK_RALT: v = MKC_formac_RCommand; break;
-		case SDLK_LALT: v = MKC_formac_Command; break;
-		case SDLK_RMETA: v = MKC_formac_RCommand; break;
-		case SDLK_LMETA: v = MKC_formac_Command; break;
-		case SDLK_LSUPER: v = MKC_formac_Option; break;
-		case SDLK_RSUPER: v = MKC_formac_ROption; break;
+		case SDLK_APPLICATION: v = MKC_formac_Command; break;
+		case SDLK_LALT: v = MKC_formac_Option; break;
+		case SDLK_RALT : v = MKC_formac_ROption; break;
 
 		case SDLK_MODE: /* ? */ break;
-		case SDLK_COMPOSE: /* ? */ break;
+
 
 		case SDLK_HELP: v = MKC_formac_Help; break;
-		case SDLK_PRINT: v = MKC_Print; break;
+		case SDLK_PRINTSCREEN: v = MKC_Print; break;
 
 		case SDLK_SYSREQ: /* ? */ break;
-		case SDLK_BREAK: /* ? */ break;
+		//case SDLK_BREAK: /* ? */ break;
 		case SDLK_MENU: /* ? */ break;
 		case SDLK_POWER: /* ? */ break;
-		case SDLK_EURO: /* ? */ break;
+		//case SDLK_EURO: /* ? */ break;
 		case SDLK_UNDO: /* ? */ break;
 
 		default:
@@ -1079,7 +1087,7 @@ LOCALFUNC ui3r SDLKey2MacKeyCode(SDLKey i)
 	return v;
 }
 
-LOCALPROC DoKeyCode(SDL_keysym *r, blnr down)
+LOCALPROC DoKeyCode(SDL_Keysym *r, blnr down)
 {
 	ui3r v = SDLKey2MacKeyCode(r->sym);
 	if (MKC_None != v) {
@@ -1711,20 +1719,17 @@ LOCALPROC HandleTheEvent(SDL_Event *event)
 		case SDL_QUIT:
 			RequestMacOff = trueblnr;
 			break;
-		case SDL_ACTIVEEVENT:
-			switch (event->active.state) {
-				case SDL_APPINPUTFOCUS:
-					gTrueBackgroundFlag = (0 == event->active.gain);
-#if 0 && UseMotionEvents
-					if (! gTrueBackgroundFlag) {
-						CheckMouseState();
-					}
-#endif
-					break;
-				case SDL_APPMOUSEFOCUS:
-					CaughtMouse = (0 != event->active.gain);
-					break;
-			}
+		case SDL_WINDOWEVENT_FOCUS_GAINED :
+			gTrueBackgroundFlag = 0;
+			break;
+	    case SDL_WINDOWEVENT_FOCUS_LOST:
+	        gTrueBackgroundFlag = 1;
+	        break;
+	    case SDL_WINDOWEVENT_LEAVE:
+	        CaughtMouse = 0;
+            break;
+		case SDL_WINDOWEVENT_ENTER :
+			CaughtMouse = 1;
 			break;
 		case SDL_MOUSEMOTION:
 			MousePositionNotify(
@@ -1789,7 +1794,6 @@ LOCALFUNC blnr Screen_Init(void)
 	{
 		fprintf(stderr, "Unable to init SDL: %s\n", SDL_GetError());
 	} else {
-		SDL_WM_SetCaption(kStrAppName, NULL);
 		v = trueblnr;
 	}
 
@@ -1804,7 +1808,7 @@ LOCALVAR blnr GrabMachine = falseblnr;
 LOCALPROC GrabTheMachine(void)
 {
 #if GrabKeysFullScreen
-	(void) SDL_WM_GrabInput(SDL_GRAB_ON);
+    SDL_SetRelativeMouseMode(SDL_TRUE);
 #endif
 
 #if EnableFSMouseMotion
@@ -1834,7 +1838,7 @@ LOCALPROC UngrabMachine(void)
 #endif
 
 #if GrabKeysFullScreen
-	(void) SDL_WM_GrabInput(SDL_GRAB_OFF);
+    SDL_SetRelativeMouseMode(SDL_FALSE);
 #endif
 }
 #endif
@@ -1873,7 +1877,7 @@ LOCALFUNC blnr CreateMainWindow(void)
 {
 	int NewWindowHeight = vMacScreenHeight;
 	int NewWindowWidth = vMacScreenWidth;
-	Uint32 flags = SDL_SWSURFACE;
+	Uint32 flags = SDL_WINDOW_SHOWN;
 	blnr v = falseblnr;
 
 #if EnableMagnify && 1
@@ -1888,7 +1892,7 @@ LOCALFUNC blnr CreateMainWindow(void)
 #endif
 #if MayFullScreen
 	{
-		flags |= SDL_FULLSCREEN;
+		flags |= SDL_WINDOW_FULLSCREEN;
 	}
 #endif
 
@@ -1897,15 +1901,12 @@ LOCALFUNC blnr CreateMainWindow(void)
 	ViewHSize = vMacScreenWidth;
 	ViewVSize = vMacScreenHeight;
 
-	my_surface = SDL_SetVideoMode(NewWindowWidth, NewWindowHeight,
-#if 0 != vMacScreenDepth
-		32,
-#else
-		/* 32 */ /* 24 */ /* 16 */ 8,
-#endif
-		flags);
+    gWindow = SDL_CreateWindow("Mini vMac", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, vMacScreenWidth, vMacScreenHeight, flags );
+    gRenderer = SDL_CreateRenderer(gWindow, -1, 0);
+    my_surface = SDL_GetWindowSurface(gWindow);
+
 	if (NULL == my_surface) {
-		fprintf(stderr, "SDL_SetVideoMode fails: %s\n",
+		fprintf(stderr, "SDL_GetWindowSurface fails: %s\n",
 			SDL_GetError());
 	} else {
 #if 0 != vMacScreenDepth
@@ -2319,6 +2320,14 @@ LOCALPROC UnInitOSGLU(void)
 
 	SDL_Quit();
 }
+
+#ifdef _WIN32
+#include <windef.h>
+int WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+{
+    main(0, NULL);
+}
+#endif
 
 int main(int argc, char **argv)
 {

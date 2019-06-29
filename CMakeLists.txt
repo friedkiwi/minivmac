@@ -25,71 +25,21 @@ set ( BASE_SOURCES
 	src/VideoCardEmulator.c
 )
 
-set ( X11_SOURCES
-	src/platforms/X11_WithRom.c
-)
-
-
 set ( SDL_SOURCES
 	src/platforms/SDL_WithRom.c
 )
-
-set ( WINDOWS_SOURCES
-	src/platforms/Windows_WithRom.c
-)
-
 
 set ( MAIN_SOURCES
 	src/ProgramMain.c
 )
 
-find_package(SDL)
+add_subdirectory(SDL2)
+
 
 add_library (minivmac_base ${BASE_SOURCES})
+add_library (minivmac_uisdl ${SDL_SOURCES})
+target_link_libraries(minivmac_uisdl SDL2-static  )
 
-if(SDL_FOUND)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_UNIX -DGUI_SDL -I${SDL_INCLUDE_DIRS}")
-	add_library(minivmac_uisdl ${SDL_SOURCES})
-	target_link_libraries(minivmac_uisdl ${SDL_LIBRARY})
-	message ("Building SDL version")
-endif()
-
-
-find_package(X11)
-
-if(X11_FOUND)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DOS_UNIX -DGUI_X11")
-	add_library (minivmac_uix11 ${X11_SOURCES})
-	target_link_libraries(minivmac_uix11 X11)
-	target_link_libraries(minivmac_uix11 dl)
-	message ("Building X11 version")
-endif()
-
-if(WIN32)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DGUI_WINDOWS")
-	add_library (minivmac_uiwindows ${WINDOWS_SOURCES})
-	message ("Building Windows version")
-endif()
-
-
-
-if (X11_FOUND)
-	add_executable(minivmac_x11 ${MAIN_SOURCES})
-	target_link_libraries(minivmac_x11 minivmac_base)
-	target_link_libraries(minivmac_x11 minivmac_uix11)
-
-endif()
-
-if (SDL_FOUND)
-	add_executable(minivmac_sdl ${MAIN_SOURCES})
-	target_link_libraries(minivmac_sdl minivmac_base)
-	target_link_libraries(minivmac_sdl minivmac_uisdl) 
-endif()
-
-if (WIN32)
-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,-subsystem,windows")
-	add_executable(minivmac ${MAIN_SOURCES})
-	target_link_libraries(minivmac minivmac_uiwindows)
-	target_link_libraries(minivmac minivmac_base)
-	target_link_libraries(minivmac winmm)
-endif()
+add_executable(minivmac ${MAIN_SOURCES})
+target_link_libraries(minivmac minivmac_base)
+target_link_libraries(minivmac minivmac_uisdl)
