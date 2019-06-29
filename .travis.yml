@@ -1,29 +1,26 @@
 language: c
-matrix:
-        include:
-                - os: linux
-                  dist: trusty
-                  sudo: true
-                  compiler: gcc
-                  addons:
-                        solarcloud:
-                                organization: "friedkiwi-github"
-                        apt:
-                                packages: build-essential libsdl2-dev cmake pkg-config mingw-w64
+dist: trusty
+sudo: true
+compiler: gcc
+addons:
+  solarcloud:
+    organization: "friedkiwi-github"
+  apt:
+    packages: build-essential libsdl2-dev cmake pkg-config mingw-w64
 
 script:
-        - mkdir -p build_linux
-        - cd build_linux
-        - cmake ..
-        - make
-        - cd ..
-        - mkdir build_mingw32
-        - cd build_mingw32
-        - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw32.txt ..
-        - make
-        - cd ..
-        - mkdir -p build_mingw64
-        - cd build_mingw64
-        - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw64.txt ..
-        - make
-        - sonar-scanner
+  - mkdir -p build_linux
+  - cd build_linux
+  - cmake ..
+  - make
+  - cd ..
+  - mkdir build_mingw32
+  - cd build_mingw32
+  - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw32.txt ..
+  - make
+  - cd ..
+  - mkdir -p build_mingw64
+  - cd build_mingw64
+  - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw64.txt ..
+  - make
+  - sonar-scanner

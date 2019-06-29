@@ -16,3 +16,4 @@ minivmac_x11
 .idea
 /cmake-build-debug/
 /cmake-build-release/
+.scannerwork
