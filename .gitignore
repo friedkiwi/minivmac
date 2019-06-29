@@ -13,3 +13,4 @@ vMac.ROM
 *.exe
 minivmac_sdl
 minivmac_x11
+.idea
