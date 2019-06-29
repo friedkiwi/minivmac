@@ -23,4 +23,3 @@ script:
   - cd build_mingw64
   - cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain_mingw64.txt ..
   - make
-  - sonar-scanner

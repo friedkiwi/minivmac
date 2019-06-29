@@ -343,6 +343,7 @@ LOCALFUNC blnr Sony_InsertIth(int i)
 
 LOCALFUNC blnr LoadInitialImages(void)
 {
+    Sony_Insert1("boot.img", falseblnr);
 	if (! AnyDiskInserted()) {
 		int i;
 
