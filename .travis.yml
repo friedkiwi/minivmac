@@ -1,14 +1,13 @@
 language: c
-addons:
-        sonarcloud:
-                organization: "friedkiwi-github"
 matrix:
         include:
                 - os: linux
-                  dist: xenial
+                  dist: trusty
                   sudo: true
                   compiler: gcc
-                  addons: 
+                  addons:
+                        solarcloud:
+                                organization: "friedkiwi-github"
                         apt:
                                 packages: build-essential libsdl2-dev cmake pkg-config mingw-w64
 
